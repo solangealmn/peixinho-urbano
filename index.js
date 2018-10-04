@@ -1,9 +1,7 @@
 const database = firebase.database();
-
 $(document).ready(function(){
   dataTickets()
 });
-
 const dataTickets = () => {
   database.ref("tickets/").once('value')
   .then(function(snapshot) {
@@ -27,7 +25,6 @@ const dataTickets = () => {
      });
   });
 }
-
 function modal(id){
   database.ref("tickets/").once('value')
   .then(function(snapshot) {
@@ -35,7 +32,6 @@ function modal(id){
       var childKey = childSnapshot.key;
       var childData = childSnapshot.val();
       var childData = childSnapshot.val();
-
       if(id === childKey) {
         $("#title-modal").text(childData.name);
         $("#body-modal").text(childData.product);
