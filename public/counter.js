@@ -1,8 +1,5 @@
-function counter() {
-  console.log("function counter")
-  document.getElementById("select").addEventListener("click", function (){
 
-    // $(this).text(code)
+  document.getElementById("select").addEventListener("click", function (){
     var maxCupons = document.getElementById("conter-body-modal");
     var cuponsMax = (parseInt(maxCupons.textContent));
     if (cuponsMax > 0){
@@ -10,7 +7,6 @@ function counter() {
     } else {
       document.getElementById("select").disabled = true;
     }
-    console.log(cuponsMax);
     var result = document.getElementById("conter-body-modal").innerHTML = cuponsMax;
+    $("#cupom-body-modal").show()
   });
-}

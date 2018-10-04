@@ -15,10 +15,11 @@ const dataFavoritesTickets = () => {
       <p class="card-text">${item.discount}</p>
       <p class="card-text">${item.quantity}</p>
     </div>
-    <button data-get-id=${item.id} class="btn btn-details" data-toggle="modal" data-target="#tickets"> Ver mais </button>
+    <button data-get-id=${item.id} class="btn btn-details btn-success" data-toggle="modal" data-target="#tickets"> Ver mais </button>
     <button data-id=${item.id} class="btn-favorite"> <i class="fas fa-heart"></i> </button>
   </div>
   `
+  $(".favorites-tickets").html("")
   $(".favorites-tickets").append(template)
   })
 }
@@ -33,7 +34,8 @@ function modal(id){
       if(id === childKey) {
         $("#title-modal").text(childData.name);
         $("#body-modal").text(childData.product);
-        $("#cupom-body-modal").text(childData.code)
+        $("#conter-body-modal").text(childData.quantity)
+        $("#cupom-body-modal").text(childData.code).hide()
       }
      });
   });
