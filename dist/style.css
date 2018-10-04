@@ -8,6 +8,8 @@ main {
   padding: 30px;
 }
 
+/* Index.html */
+
 .carousel-caption {
     right: 0;
     bottom: 0;
@@ -16,10 +18,11 @@ main {
 }
 
 /* Login.html */
-.login {
+.form {
   border: 1px #3333 solid;
   padding: 15px;
 }
+
 
 @media (max-width: 575.98px) {
   body {
