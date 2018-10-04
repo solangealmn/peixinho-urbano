@@ -14,14 +14,18 @@ const dataTickets = () => {
       var childData = childSnapshot.val();
       console.log(childSnapshot.val())
       $(".tickets-list").prepend(`
-        <li>
-          <div data-task-id=${childKey} />
-            <span>${childData.name}</span>
-            <span>${childData.product}</span>
-            <span>${childData.discount}</span>
-            <span>${childData.quantity}</span>
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+            <div data-task-id=${childKey} />
+              <h3 class="h3"><span>${childData.name}</span></h3> 
+              <span>${childData.product}</span>
+              <span>${childData.discount}</span>
+              <span>${childData.quantity}</span>
+            </div>
+            </div>
           </div>
-        </li>`
+        </div>`
       );
      });
   });
