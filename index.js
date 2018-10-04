@@ -20,6 +20,7 @@ const dataTickets = () => {
             <span>${childData.product}</span>
             <span>${childData.discount}</span>
             <span>${childData.quantity}</span>
+            <button id="details" class="btn"> Ver mais </button>
           </div>
         </li>`
       );
