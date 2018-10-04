@@ -1,65 +1,104 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="pt-br">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="dist/style.css">
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase.js"></script>
+    <script>
+     // Initialize Firebase
+     var config = {
+       apiKey: "AIzaSyB961BZZ4JIAmIBh-j6tZ7Bx9sfEiTmF2A",
+       authDomain: "precinhodebanana2018.firebaseapp.com",
+       databaseURL: "https://precinhodebanana2018.firebaseio.com",
+       projectId: "precinhodebanana2018",
+       storageBucket: "precinhodebanana2018.appspot.com",
+       messagingSenderId: "843314755786"
+     };
+     firebase.initializeApp(config);
+    </script>
     <title>Precinho de Banana</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
-
-    <form class="needs-validation" novalidate>
-      <div class="form-row">
-        <div class="col-md-4 mb-3">
-          <label for="validationCustom01">Nome Empresa</label>
-          <input type="text" class="form-control" id="input-name"
-          placeholder="Name" required>
+    <!--Header-->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light d-flex bd-highlight">
+        <a class="navbar-brand flex-grow-1 bd-highlight" href="#">
+          <!-- <img src="dist/assets/banana.svg" width="90" height="90" alt=""> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse bd-highlight" id="navbarSupportedContent">
+          <ul class="navbar-nav ">
+            <li class="nav-item active p-2">
+              <a class="nav-link" href="#">Precinho de Banana <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item p-2">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+          </ul>
         </div>
-      </div>
-      <div class="form-row">
-        <div class="col-md-6 mb-3">
-          <label for="validationCustom03">Produto</label>
-          <input type="text" class="form-control" id="input-product" placeholder="produto" required>
-          <div class="invalid-feedback">
+      </nav>
+    </header>
+    <!--Main-->
+    <main>
+      <div class='container'>
+        <div class='row d-flex justify-content-center'>
+          <div class='col-xs rounded form'>
+            <h3>Cadastrar Cupons</h3>
+            <form class="needs-validation" novalidate>
+              <div class="form-row">
+                <div class="col-md-4 mb-3">
+                  <label for="validationCustom01">Nome Empresa</label>
+                  <input type="text" class="form-control" id="input-name" placeholder="Nome" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="col-md-6 mb-3">
+                  <label for="validationCustom03">Produto</label>
+                  <input type="text" class="form-control" id="input-product" placeholder="Produto" required>
+                  <div class="invalid-feedback"></div>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom05"> Desconto </label>
+                  <input type="text" class="form-control" id="input-discount"
+                  placeholder="%" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom05">Quantidade</label>
+                  <input type="text" class="form-control" id="input-quantity"
+                  placeholder="" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                  <label for="validationCustom05">Código do Cupom</label>
+                  <input type="text" class="form-control" id="input-code"
+                  placeholder="" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="form-check">
+                </div>
+              </div>
+              <button class="btn_add btn btn-primary" id="confirm" type="submit">Confirmar</button>
+              <button class="btn_cancel btn btn-primary" type="submit">Cancelar</button>
+            </form>
           </div>
         </div>
-        <div class="col-md-3 mb-3">
-          <label for="validationCustom05"> Desconto </label>
-          <input type="text" class="form-control" id="input-discount"
-          placeholder="%" required>
-        </div>
-        <div class="col-md-3 mb-3">
-          <label for="validationCustom05">Quantidade</label>
-          <input type="text" class="form-control" id="input-quantity"
-          placeholder="" required>
-        </div>
-        <div class="col-md-3 mb-3">
-          <label for="validationCustom05">Código do Cupom</label>
-          <input type="text" class="form-control" id="input-code"
-          placeholder="" required>
-        </div>
       </div>
-      <div class="form-group">
-        <div class="form-check">
-        </div>
-      </div>
-      <button class="btn_add btn-primary" id="confirm" type="submit">Confirmar</button>
-      <button class="btn_cancel btn-primary" type="submit">Cancelar</button>
-    </form>
-
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+    </main>
+    <!--Footer-->
+    <footer class='footer-copyright text-center py-3 bg-light'>© 2018 Copyright | Precinho de Banana</footer>
+    <!--Script-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
     <script src="firebase-config.js"></script>
-
-    <!-- Jquery -->
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+    <script src="login.js"></script>
     <script src="form-tickets.js"></script>
   </body>
 </html>
