@@ -15,7 +15,7 @@ const dataTickets = () => {
         <div class="col-4 mb-3">
           <div class="card-group">
             <div class="card" data-task-id=${childKey}>
-              <img class="card-img-top" src="dist/assets/comida-natural.jpg" alt="medicina natural">
+              <img class="card-img-top" src="dist/assets/comida-natural.png" alt="comida natural">
               <div class="card-body">
                 <h5 class="card-title">${childData.name}</h5>
                 <p class="card-text">${childData.product}</p>
