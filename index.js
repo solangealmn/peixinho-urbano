@@ -10,10 +10,9 @@ const dataTickets = () => {
     snapshot.forEach(function(childSnapshot) {
       var childKey = childSnapshot.key;
       var childData = childSnapshot.val();
-      console.log(childSnapshot.val())
       $(".tickets-list").prepend(`
         <li>
-          <div data-task-id=${childKey} />
+          <div data-task-id="${childKey}" />
             <span>${childData.name}</span>
             <span>${childData.product}</span>
             <span>${childData.discount}</span>
@@ -22,6 +21,6 @@ const dataTickets = () => {
           </div>
         </li>`
       );
-     });
+    });
   });
 }
