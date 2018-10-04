@@ -17,12 +17,17 @@ main {
     background-color: rgba(0, 0, 0, 0.6);
 }
 
+button.btn-favorite {
+  background-color: transparent;
+  border: none;
+  color: #e44c4c;
+}
+
 /* Login.html */
 .form {
   border: 1px #3333 solid;
   padding: 15px;
 }
-
 
 @media (max-width: 575.98px) {
   body {
