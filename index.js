@@ -9,12 +9,13 @@ const dataTickets = () => {
       var childKey = childSnapshot.key;
       var childData = childSnapshot.val();
       $(".tickets-list").prepend(`
-        <div class="col-4">
-          <div data-task-id=${childKey} />
-            <h3 class="h3">${childData.name}</h3>
-            <h4>${childData.product}</h4>
-            <h4 class="h4">${childData.discount}</h4>
-            <h5 class="h5">${childData.quantity}</h5>
+          <div class="card" data-task-id=${childKey}>
+            <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">${childData.name}</h5>
+              <p class="card-text">${childData.product}</p>
+              <p class="card-text">${childData.discount}</p>
+              <p class="card-text">${childData.quantity}</p>
           </div>
           <button data-get-id=${childKey} class="btn btn-details" data-toggle="modal" data-target="#tickets"> Ver mais </button>
         </div>`
