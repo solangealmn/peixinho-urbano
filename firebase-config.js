@@ -1,9 +1,9 @@
-var config = {
-    apiKey: "AIzaSyDEdS_fKROrkQ8_0VB90uJvmoXoGAeM760",
-    authDomain: "peixinho-urbano.firebaseapp.com",
-    databaseURL: "https://peixinho-urbano.firebaseio.com",
-    projectId: "peixinho-urbano",
-    storageBucket: "peixinho-urbano.appspot.com",
-    messagingSenderId: "587100445935"
-  };
-  firebase.initializeApp(config);
+const config = {
+  apiKey: "AIzaSyB961BZZ4JIAmIBh-j6tZ7Bx9sfEiTmF2A",
+  authDomain: "precinhodebanana2018.firebaseapp.com",
+  databaseURL: "https://precinhodebanana2018.firebaseio.com",
+  projectId: "precinhodebanana2018",
+  storageBucket: "precinhodebanana2018.appspot.com",
+  messagingSenderId: "843314755786"
+};
+firebase.initializeApp(config);
