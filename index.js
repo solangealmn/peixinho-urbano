@@ -5,10 +5,8 @@ $(document).ready(function(){
 });
 
 const dataTickets = () => {
-  // Carregar cupons
   database.ref("tickets/").once('value')
   .then(function(snapshot) {
-    // console.log(snapshot.val())
     snapshot.forEach(function(childSnapshot) {
       var childKey = childSnapshot.key;
       var childData = childSnapshot.val();
