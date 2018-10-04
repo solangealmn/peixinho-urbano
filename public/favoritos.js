@@ -33,9 +33,9 @@ function modal(id){
       var childData = childSnapshot.val();
       if(id === childKey) {
         $("#title-modal").text(childData.name);
-        $("#body-modal").text(childData.product);
-        $("#conter-body-modal").text(childData.quantity)
-        $("#cupom-body-modal").text(childData.code).hide()
+        $("#body-modal").text("Produto: " + childData.product);
+        $("#conter-body-modal").text("Quantidade de cupons: " + childData.quantity)
+        $("#cupom-body-modal").text("Código de desconto" + childData.code).hide()
       }
      });
   });
